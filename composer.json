@@ -1,9 +1,16 @@
 {
     "name": "pyromn/pohoda-export",
     "description": "Export do POHODA ucetnictvi",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Pohoda\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0"
         }
     },
     "require": {
