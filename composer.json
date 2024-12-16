@@ -1,7 +1,7 @@
 {
     "name": "pyromn/pohoda-export",
     "description": "Export do POHODA ucetnictvi",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
