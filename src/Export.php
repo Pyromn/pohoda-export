@@ -78,6 +78,11 @@ class Export
 		echo $xml->asXML();
 	}
 
+    public function getExportXml($exportId, $application, $note = '')
+    {
+        return $this->export($exportId, $application, $note);
+    }
+
 	public function getIco() {
 		if(!is_null($this->ico) && $this->ico !== '') {
 			return $this->ico;
