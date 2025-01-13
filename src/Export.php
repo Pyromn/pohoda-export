@@ -13,6 +13,7 @@ class Export
 
 	private $invoices = [];
 	private $address = [];
+    private $exportAddress = false;
 
 	private $lastId = 0;
 	private $exportFolder;
@@ -110,16 +111,17 @@ class Export
 
 		$i = $a = 0;
 
-		/** @var Address $item */
-		foreach ($this->address as $item) {
-			$a++;
-			$dataItem = $xml->addChild("dat:dataPackItem");
-			$dataItem->addAttribute('version', "2.0");
-			$dataItem->addAttribute('id', $item->getId());
+        if ($this->exportAddress) {
+            /** @var Address $item */
+            foreach ($this->address as $item) {
+                $a++;
+                $dataItem = $xml->addChild("dat:dataPackItem");
+                $dataItem->addAttribute('version', "2.0");
+                $dataItem->addAttribute('id', $item->getId());
 
-			$item->export($dataItem);
-		}
-
+                $item->export($dataItem);
+            }
+        }
 
 		/** @var Invoice $item */
 		foreach ($this->invoices as $item) {

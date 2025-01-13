@@ -64,6 +64,8 @@ class Invoice
 
 	private $id;
 
+    private $numberRequested = false;
+
 	/** @var string - kod meny */
 	private $foreignCurrency;
 
@@ -473,10 +475,12 @@ class Invoice
 
 	private function exportHeader(SimpleXMLElement $header)
 	{
-
 		$header->addChild("inv:invoiceType", $this->type);
 		$num = $header->addChild("inv:number");
-		$num->addChild('typ:numberRequested', $this->getId(), Export::NS_TYPE);
+
+        if ($this->numberRequested) {
+            $num->addChild('typ:numberRequested', $this->getId(), Export::NS_TYPE);
+        }
 
 		$header->addChild("inv:symVar", $this->varNum);
 
