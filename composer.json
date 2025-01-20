@@ -8,11 +8,6 @@
             "Pohoda\\": "src/"
         }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0"
-        }
-    },
     "require": {
         "php": ">=7.0"
     }
