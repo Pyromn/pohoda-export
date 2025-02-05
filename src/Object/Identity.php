@@ -3,10 +3,10 @@
  * Author: Ivo Toman
  */
 
-namespace Pohoda\Object;
+namespace Pyromn\Pohoda\Object;
 
 
-use Pohoda\Validators;
+use Pyromn\Pohoda\Validators;
 
 class Identity
 {
@@ -27,7 +27,7 @@ class Identity
 	 * @param Address $address
 	 * @param Address|null $shippingAddress
 	 */
-	public function __construct($id = null, Address $address, Address $shippingAddress = null)
+	public function __construct($id, Address $address, Address $shippingAddress = null)
 	{
 		$this->setId($id);
 		$this->address = $address;

@@ -3,14 +3,14 @@
  * Author: Ivo Toman
  */
 
-namespace Pohoda;
+namespace Pyromn\Pohoda\Tests;
 
 use PHPUnit\Framework\TestCase;
+use Pyromn\Pohoda\SimpleXMLElementExtended;
 
 
 class SimpleXMLElementExtendedTest extends TestCase
 {
-
 	public function testAddChild()
 	{
 		$xml = new SimpleXMLElementExtended('<data/>');

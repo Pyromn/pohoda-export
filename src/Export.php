@@ -1,8 +1,8 @@
 <?php
 
-namespace Pohoda;
+namespace Pyromn\Pohoda;
 
-use Pohoda\Export\Address;
+use Pyromn\Pohoda\Export\Address;
 
 class Export
 {

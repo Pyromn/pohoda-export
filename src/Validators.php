@@ -3,7 +3,7 @@
  * Author: Ivo Toman
  */
 
-namespace Pohoda;
+namespace Pyromn\Pohoda;
 
 
 class Validators
@@ -68,7 +68,9 @@ class Validators
 	public static function assertKeyInList($value, array $list)
 	{
 		if (self::isKeyInList($value, $list) === false) {
-			throw new \InvalidArgumentException("value ($value) is not in " . explode(",", array_keys($list)));
+			throw new \InvalidArgumentException(
+                "value ($value) is not in " . explode(",", array_keys($list))
+            );
 		}
 	}
 

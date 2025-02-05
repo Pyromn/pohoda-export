@@ -3,7 +3,7 @@
  * Author: Ivo Toman
  */
 
-namespace Pohoda;
+namespace Pyromn\Pohoda;
 
 
 class InvoiceItem

@@ -1,8 +1,8 @@
 <?php
 
-namespace Pohoda\Object;
+namespace Pyromn\Pohoda\Object;
 
-use Pohoda\Validators;
+use Pyromn\Pohoda\Validators;
 
 /**
  * Author: Ivo Toman

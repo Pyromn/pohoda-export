@@ -3,11 +3,11 @@
  * Author: Ivo Toman
  */
 
-namespace Pohoda\Export;
+namespace Pyromn\Pohoda\Export;
 
-use Pohoda\Export;
+use Pyromn\Pohoda\Export;
+use Pyromn\Pohoda\Object\Identity;
 use SimpleXMLElement;
-use Pohoda\Object\Identity;
 
 class Address implements IExport
 {
@@ -89,7 +89,7 @@ class Address implements IExport
 	}
 
 
-	public function exportAddressXml(SimpleXMLElement $xml, \Pohoda\Object\Address $address, $type = self::ADDRESS)
+	public function exportAddressXml(SimpleXMLElement $xml, \Pyromn\Pohoda\Object\Address $address, $type = self::ADDRESS)
 	{
 
 		$xmlAd = $xml->addChild('typ:' . $type, null, Export::NS_TYPE);

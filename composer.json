@@ -1,14 +1,28 @@
 {
     "name": "pyromn/pohoda-export",
-    "description": "Export do POHODA ucetnictvi",
+    "description": "Export to POHODA accounting",
+    "type": "library",
+    "license": "GPL-2.0-or-later",
+    "keywords": ["invoice", "xml", "pohoda"],
     "minimum-stability": "stable",
     "prefer-stable": true,
+    "require": {
+        "php": ">=7.0",
+        "ext-dom": "*",
+        "ext-mbstring": "*",
+        "ext-simplexml": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "8 - 9"
+    },
     "autoload": {
         "psr-4": {
-            "Pohoda\\": "src/"
+            "Pyromn\\Pohoda\\": "src/"
         }
     },
-    "require": {
-        "php": ">=7.0"
+    "autoload-dev": {
+        "psr-4": {
+            "Pyromn\\Pohoda\\Tests\\": "tests/"
+        }
     }
 }

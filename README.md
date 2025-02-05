@@ -11,11 +11,11 @@ Je to něco co vzniklo jako utilitka v SECTION Technologies s.r.o. Další rozš
 ```php
 
 // zadejte ICO
-$pohoda = new Pohoda\Export('01508512');
+$pohoda = new Pyromn\Pohoda\Export('01508512');
 
 try {
 	// cislo faktury
-	$invoice = new Pohoda\Invoice(324342);
+	$invoice = new Pyromn\Pohoda\Invoice(324342);
 	
 	// cena faktury s DPH (po staru) - volitelně
 	$invoice->setText('faktura za prace ...');
@@ -39,7 +39,7 @@ try {
 	//nebo pridanim polozek do faktury (nove)
 	$invoice->setText('Faktura za zboží');
 	//polozky na fakture
-	$item = new Pohoda\InvoiceItem();
+	$item = new Pyromn\Pohoda\InvoiceItem();
 	$item->setText("Název produktu");
 	$item->setQuantity(1); //pocet
 	$item->setCode("x230"); //katalogove cislo
@@ -91,11 +91,11 @@ try {
 		"country" => "CZ", //volitelne, z ciselniku pohody
 	];
 	$customerAddress = 
-		new Pohoda\Export\Address(
-	        new Pohoda\Object\Identity(
+		new Pyromn\Pohoda\Export\Address(
+	        new Pyromn\Pohoda\Object\Identity(
 	            "z125", //identifikator zakaznika [pokud neni zadan, nebude propojen s adresarem]
-	            new Pohoda\Object\Address($customer), //adresa zakaznika
-	            new Pohoda\Object\Address(["street" => "Pod Mostem"]) //pripadne dodaci adresa
+	            new Pyromn\Pohoda\Object\Address($customer), //adresa zakaznika
+	            new Pyromn\Pohoda\Object\Address(["street" => "Pod Mostem"]) //pripadne dodaci adresa
 	        )
 	    );
 	$invoice->setCustomerAddress($customerAddress);
@@ -103,7 +103,7 @@ try {
 	// nebo jednoduseji identitu nechat vytvorit
 	$customerAddress = $invoice->createCustomerAddress($customer, "z125", ["street" => "Pod Mostem"]);
 
-} catch (Pohoda\InvoiceException $e) {
+} catch (Pyromn\Pohoda\InvoiceException $e) {
 	echo $e->getMesssage();
 } catch (\InvalidArgumentException $e) {
   	echo $e->getMesssage();
@@ -124,7 +124,7 @@ $item->setForeignUnitPrice(11.43); //cena v cizi mene
 
 ```php
 ....
-$invoice = new Pohoda\Invoice('storno-324342');
+$invoice = new Pyromn\Pohoda\Invoice('storno-324342');
 $invoice->cancelDocument('324342'); //stornovat fakturu cislo
 $inovice->cancelNumber('1904'); //ciselna rada faktur pro storno
 $invoice->setText('Storno faktury');

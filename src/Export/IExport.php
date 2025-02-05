@@ -3,7 +3,7 @@
  * Author: Ivo Toman
  */
 
-namespace Pohoda\Export;
+namespace Pyromn\Pohoda\Export;
 
 
 interface IExport

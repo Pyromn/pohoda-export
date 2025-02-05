@@ -1,10 +1,11 @@
 <?php
 
-namespace Pohoda;
+namespace Pyromn\Pohoda;
 
-use Pohoda\Export\Address;
-use SimpleXMLElement;
 use DateTime;
+use Pyromn\Pohoda\Export\Address;
+use Pyromn\Pohoda\Object\Identity;
+use SimpleXMLElement;
 
 
 class Invoice
@@ -234,7 +235,9 @@ class Invoice
 		];
 
 		if (is_null($value) || !isset($payments[$value])) {
-			throw new InvoiceException($this->getId() . ": payment type $value is not supported. Use one of these: " . explode(",", array_keys($payments)));
+			throw new InvoiceException(
+                $this->getId() . ": payment type $value is not supported. Use one of these: " . explode(",", array_keys($payments))
+            );
 		}
 		$this->paymentType = $value;
 	}
@@ -242,7 +245,7 @@ class Invoice
 	/** @deprecated */
 	public function setPaymentTypeCzech($value)
 	{
-		return $this->setPaymentTypeString($value);
+		$this->setPaymentTypeString($value);
 	}
 
 	public function setPaymentTypeString($value)
@@ -394,10 +397,10 @@ class Invoice
 	{
 		try {
 			$address = new Address(
-				new \Pohoda\Object\Identity(
+				new Identity(
 					$identity, //identifikator zakaznika [pokud neni zadan, neprovede se import do adresare]
-					new \Pohoda\Object\Address($customerAddress), //adresa zakaznika
-					new \Pohoda\Object\Address($shippingAddress) //pripadne dodaci adresa
+					new Object\Address($customerAddress), //adresa zakaznika
+					new Object\Address($shippingAddress) //pripadne dodaci adresa
 				)
 			);
 
